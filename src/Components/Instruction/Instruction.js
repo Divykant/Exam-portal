@@ -1,11 +1,34 @@
-import React, {useState} from 'react'
+import React,{useState} from 'react'
+import axios from "axios"; 
+// import {Redirect} from 'react-router-dom';
 import "./Instruction.css"
-import {NavLink} from "react-router-dom"
+// import {NavLink} from "react-router-dom"
 import { withRouter } from 'react-router-dom';
 
-function Instruction() {
-  const [language,setLanguage]=useState();
-    return (
+function Instruction(props) {
+  const [language,setLanguage]=useState("");
+
+  const postLanguage=()=>{
+    if (language) {
+      axios.put('https://radiant-scrubland-91561.herokuapp.com/api/<id>',language, {
+        headers:{
+        "Auth token" : `Bearer ${localStorage.getItem('token')}`
+      },
+    }).then(res => {
+          alert(`${res.data}`);
+          // console.log(res);
+          props.history.push('/test');
+      })
+      .catch(err => {
+        alert(`${err.data}`);
+      });
+    }
+    else {
+      alert("Please Select a Language");
+    }
+  }
+
+  return(
   <>
   <div className="topmost">
   <div className="headingCont">
@@ -35,8 +58,7 @@ function Instruction() {
         <div className="langSection">
         <span className="lastspan">Choose a language according to your prefernce</span>
         <div className="registerFields">
-            <label for="language" className="labelLanguage"></label>
-            <select className="selLang" value={language} onChange={(event) =>{setLanguage(event.target.value)}}>
+            <select value={language} onChange={(event) =>{setLanguage(event.target.value)}}>
                 <option value="null">Language</option>
                 <option value="C++">C++</option>
                 <option value="C">C</option>
@@ -44,14 +66,16 @@ function Instruction() {
                 <option value="Python">Python</option>
             </select>    
         </div>
-        <button type="submit" className="home_submit"><NavLink to={"/test/" + language}>Start Your Exam</NavLink></button>
+        <button type="submit" className="home_submit" onClick={postLanguage}>Start Your Exam</button>
     </div>
     </div>
     </div>  
     </div>
   </>
-    )
+  );
 }
 
 
 export default withRouter(Instruction);
+
+{/* <NavLink to={"/test/" + language}>Start Your Exam</NavLink> */}

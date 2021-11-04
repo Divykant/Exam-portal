@@ -60,16 +60,14 @@ body {
   font-weight: 600;
   color: #a89a9a;
 }
-.selLang {
-  margin-top: 2%;
+select {
+  top: 2%;
   border: none;
   outline: none;
   color: #a89a9a;
-  border-radius: 10px;
+  border-radius: 11px;
   box-shadow: 0px 0px 5px;
   padding: 1%;
-
-  text-align: center;
 }
 .home_submit {
   margin-top: 2%;

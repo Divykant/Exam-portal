@@ -1,76 +1,52 @@
 body {
   font-family: Roboto;
+  transition: ease all .5s;
 }
 .maindiv {
   display: flex;
   height: 100vh;
 }
 .login_Leftside {
-  align-items: center;
-  justify-content: center;
-  width: 50%;
-  display: inline-block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin-left: 140px;
 }
 .login_img {
-  width: 60%;
-  margin-left: 19%;
-  margin-right: 19%;
-  margin-bottom: -40px;
+  width: 55%;
+  margin-bottom: -50px;
   margin-top: 5%;
-  z-index: 1;
 }
 .form_area {
-  border: 3px solid #fec68d;
-  border-radius: 80px;
-  width: 90%;
-  height: 50vh;
-  margin-left: 9%;
-  margin-right: 4%;
-}
-.registerFields {
-  margin: 1%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 2px solid #fec68d;
+  border-radius: 97px;
+  width: 42vw;
+  height: 52vh;
 }
-.input1 {
-  width: 60%;
-  padding: 10px 10px 10px 40px;
-  border-radius: 10px;
+.registerArea{
+  margin-top: 10%;
+}
+.svg {
+  position: relative;
+  left: 40px;
+  top: 11px
+}
+.input {
+  width: 35vw;
+  padding: 10px 10px 10px 50px;
+  border-radius: 8px;
   border: none;
-  box-shadow: 0px 0px 2px;
-  margin-bottom: 10px;
-  margin-top: 13%;
+  box-shadow: 0px 0px 1.5px;
+  margin-bottom: 25px;
   letter-spacing: 1px;
   font-size: 15px;
   outline: none;
-}
-.user_svg {
-  position: absolute;
-  width: 33px;
-  height: 33px;
-  top: 55.5%;
-  left: 15.2%;
-  color: #000;
-}
-.input2 {
-  width: 60%;
-  outline: none;
-  padding: 10px 10px 10px 40px;
-  border-radius: 10px;
-  border: none;
-  box-shadow: 0px 0px 2px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
-  font-size: 15px;
-}
-.pass_svg {
-  position: absolute;
-  width: 33px;
-  height: 33px;
-  top: 63.7%;
-  left: 15.2%;
-  color: #000;
 }
 .lastdiv {
   display: flex;
@@ -78,15 +54,14 @@ body {
   justify-content: center;
 }
 .submit_button {
-  width: 25%;
+  width: 30%;
   height: 7vh;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #80c8f0;
   color: #fff;
   font-size: 20px;
   cursor: pointer;
-  margin-top: 2%;
   box-shadow: 0px 5px 10px 0px rgb(179 179 179);
 }
 .lastLine {
@@ -99,17 +74,92 @@ body {
   width: 50%;
 }
 .girl_img {
-  width: 90%;
+  position: relative;
+  left: -140px;
+  height: 500px;
 }
 #register {
   color: #fec68d;
 }
 .password-toogle-icon {
-  position: absolute;
+  position: relative;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 37%;
-  top: 65.3%;
+  right: 30px;
+}
+@media only screen and (max-width: 1510px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 470px;
+  }
+}
+@media only screen and (max-width: 1460px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 450px;
+  }
+}
+@media only screen and (max-width: 1435px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 430px;
+  }
+}
+@media only screen and (max-width: 1410px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 410px;
+  }
+}
+@media only screen and (max-width: 1380px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 390px;
+  }
+}
+@media only screen and (max-width: 1340px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 380px;
+  }
+}
+@media only screen and (max-width: 1320px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 360px;
+  }
+}
+@media only screen and (max-width: 1290px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 1260px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 330px;
+  }
+}
+@media only screen and (max-width: 1240px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 320px;
+  }
+}
+@media only screen and (max-width: 1225px) {
+  .girl_img {
+    position: relative;
+    left: -140px;
+    height: 300px;
+  }
 }
