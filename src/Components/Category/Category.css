@@ -1,8 +1,0 @@
-.categoryBox{
-    margin: 10px;
-    display: inline-block;
-}
-a.activeClass{
-    border-bottom:2px solid red;
-    color: blue;
-}

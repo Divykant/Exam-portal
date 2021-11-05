@@ -4,27 +4,38 @@ import axios from "axios";
 import "./Instruction.css"
 // import {NavLink} from "react-router-dom"
 import { withRouter } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Instruction(props) {
-  const [language,setLanguage]=useState("");
+  const [category,setCategory]=useState("");
 
   const postLanguage=()=>{
-    if (language) {
-      axios.put('https://radiant-scrubland-91561.herokuapp.com/api/<id>',language, {
+    if (category) {
+      axios.put('https://radiant-scrubland-91561.herokuapp.com/api/users/instruction',{
         headers:{
         "Auth token" : `Bearer ${localStorage.getItem('token')}`
       },
+      category 
     }).then(res => {
-          alert(`${res.data}`);
-          // console.log(res);
+          toast.success(`${res.data}`);
+          console.log(res);
           props.history.push('/test');
       })
       .catch(err => {
-        alert(`${err.data}`);
+        toast.error(`${err.data}`);
       });
     }
     else {
-      alert("Please Select a Language");
+      toast.warn('Please Select a Language!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     }
   }
 
@@ -58,8 +69,8 @@ function Instruction(props) {
         <div className="langSection">
         <span className="lastspan">Choose a language according to your prefernce</span>
         <div className="registerFields">
-            <select value={language} onChange={(event) =>{setLanguage(event.target.value)}}>
-                <option value="null">Language</option>
+            <select value={category} onChange={(event) =>{setCategory(event.target.value)}}>
+                <option value="0">Language</option>
                 <option value="C++">C++</option>
                 <option value="C">C</option>
                 <option value="Java">Java</option>
@@ -71,6 +82,7 @@ function Instruction(props) {
     </div>
     </div>  
     </div>
+    <ToastContainer />
   </>
   );
 }

@@ -4,6 +4,8 @@ import "./Login.css";
 import "../FontAwesomeIcons";
 import { NavLink } from "react-router-dom";
 import PasswordToggle from "../PasswordToggle/PasswordToggle";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Login(props) {
   const [PasswordInputType, ToggleIcon] = PasswordToggle();
@@ -12,8 +14,8 @@ function Login(props) {
   // const [allCandidate, setAllCandidate] = useState([]);
 
   const submitForm = (e) => {
+    e.preventDefault();
     if (email && password) {
-      e.preventDefault();
       const newEntry = {
         StudentId: Number(email),
         Password: password,
@@ -38,19 +40,41 @@ function Login(props) {
               props.history.push('/instruction');
           }
           else {
-            alert(`${res.data}`);
-            console.log(res);
+            toast.warn(`${res.data}`, {
+              position: "top-right",
+              autoClose: 5000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              });
           }
         })
         .catch(err => {
-          alert("Login Failed");
-          console.log(err);
+          toast.warn('Login Failed!', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
         });
       // console.log(allCandidate);
       // props.history.push('/instruction');
     }
     else {
-      alert("PLEASE FILL ALL DETAILS");
+        toast.error("Please Fill All Details", {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+        });
     }
   };
 
@@ -118,6 +142,7 @@ function Login(props) {
           <img className="girl_img" src="assets/illustration2.png" alt="Graphic" />
         </div>
       </div>
+      <ToastContainer />
     </>
   )
 }

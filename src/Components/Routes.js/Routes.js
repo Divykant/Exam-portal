@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState ,useEffect} from 'react'
 import Error from "../Error/Error";
 import Register from "../Register/Register";
 import { Route, Switch } from "react-router-dom";
@@ -10,8 +10,26 @@ import ProtectedRoutes from "../ProtectedRoutes.js/ProtectedRoutes";
 // import  Feedback  from '../Feedback/feedback';
 
 function Routes(props) {
-  const[isAuth,setisAuth]=useState(true);
+  const[isAuth,setisAuth]=useState(false);
   const[isAdmin,setisAdmin]=useState(false);
+  // useEffect(() => {
+  //   return () => {
+  //     axios.post('https://radiant-scrubland-91561.herokuapp.com/api/',{
+  //       headers:{
+  //       "Auth token" : `Bearer ${localStorage.getItem('token')}`
+  //     },
+  //   }).then(res => {
+  //         console.log(res);
+  //         alert(`${res.data}`);
+  //         setisAuth(true);
+  //     })
+  //     .catch(err => {
+  //         console.log(err);
+  //         alert(`${err.data}`)
+  //         setisAuth(false);
+  //     });
+  //   }
+  // },[])
   
     return (
         <>

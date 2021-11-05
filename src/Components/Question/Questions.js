@@ -1,12 +1,10 @@
 import React from 'react'
 import "./Questions.css"
-import Category from '../Category/Category'
 
 export default function Questions() {
     return (
         <>
           <div className="categoryContainer">
-              <Category/>
           </div>
           <div className="questionContainer">
               <div className="questionWrapper">
