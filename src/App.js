@@ -5,6 +5,7 @@ import { Route, Switch } from "react-router-dom";
 import Test from "./Components/Test/Test";
 import Instruction from "./Components/Instruction/Instruction";
 import Login from "./Components/Login/Login";
+import Feedback from "./Components/Feedback/Feedback";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/register" component={Register} />
         <Route component={Error} />
       </Switch>
+      {/* <Feedback/> */}
     </>
   );
 }

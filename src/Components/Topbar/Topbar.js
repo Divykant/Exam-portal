@@ -9,7 +9,7 @@ export default function Topbar() {
     let interval=useRef();
 
     const startTimer=()=>{
-        var countDownDate = new Date("OCT 8, 2021 18:00:00").getTime();
+        var countDownDate = new Date("OCT 31, 2021 15:00:00").getTime();
 
         var x = setInterval(()=> {
             var now = new Date().getTime();
